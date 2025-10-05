@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <!-- Restzeit -->
+    <TextView
+        android:id="@+id/textRestzeit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rest: 0h 00m"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+
+    <!-- Letzter Eintrag -->
+    <TextView
+        android:id="@+id/textLetzterEintrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Noch keine Einträge"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="13sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textLegalInfo"
+        android:layout_width="390dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:maxLines="2"
+        android:text="Gesetzliche Pause: —"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="13sp" />
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnArbeitszeit"
+            android:layout_width="10dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Start/Stop" />
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="10dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Pause" />
+    </LinearLayout>
+</LinearLayout>

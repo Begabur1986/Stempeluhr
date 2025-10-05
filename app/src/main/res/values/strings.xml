@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">Stempeluhr</string>
+    <string name="widget_btn_start">Arbeitszeit starten</string>
+    <string name="widget_btn_feierabend">Feierabend</string>
+    <string name="widget_btn_pause_start">Pause starten</string>
+    <string name="widget_btn_pause_stop">Pause beenden</string>
+</resources>

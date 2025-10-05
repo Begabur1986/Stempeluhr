@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Ab Android 13 nötig für Benachrichtigungen -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Für Re-Schedule nach Neustart -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+
+        <!-- Launcher-Activity mit Splash-Theme -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Stempeluhr.Starting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 📌 AppWidget Provider -->
+        <receiver
+            android:name=".widget.StempeluhrWidget"
+            android:label="Stempeluhr"
+            android:exported="true">
+            <intent-filter>
+                <!-- Standard Widget-Update -->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+                <!-- Re-Schedule nach Boot -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <!-- 🔘 Aktionen müssen ZU 100% den Code-Strings entsprechen -->
+                <action android:name="com.example.stempeluhr.ACTION_START_STOP" />
+                <action android:name="com.example.stempeluhr.ACTION_PAUSE" />
+
+                <!-- Optional: Ticker (nur wenn in StempeluhrWidget.kt verwendet) -->
+                <action android:name="com.example.stempeluhr.ACTION_TICK" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/stempeluhr_widget_info" />
+        </receiver>
+
+    </application>
+
+</manifest>

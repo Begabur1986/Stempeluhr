@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Stempeluhr" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Stempeluhr.Starting" parent="Theme.SplashScreen">
+        <!-- Nur Farbe erlaubt -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+
+        <!-- Transparentes Icon statt App-Icon -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_transparent</item>
+
+        <!-- (optional) keine Branding-Grafik -->
+        <!-- <item name="windowSplashScreenBrandingImage">@null</item> -->
+
+        <item name="postSplashScreenTheme">@style/Theme.Stempeluhr</item>
+    </style>
+
+</resources>

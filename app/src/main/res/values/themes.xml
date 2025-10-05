@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Stempeluhr" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Stempeluhr.Starting" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Vor Android 12 darf hier ein Drawable verwendet werden -->
+        <item name="android:windowBackground">@drawable/splash_full_bg</item>
+    </style>
+
+</resources>
